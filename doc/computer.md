@@ -100,3 +100,9 @@ hypervisorlaunchtype    Auto
 　WindowsVISTAから、より堅牢なセキュリティを考慮してセッションが分割された
 ※ プロセスエクスプローラーで確認可能
 * 別ユーザがログオンすると新規セッションが作成される
+
+## 参考文献
+### ブート シーケンスのフローチャート
+https://docs.microsoft.com/ja-jp/windows/client-management/img-boot-sequence
+### Windows セッション マネージャーとは何か
+https://tooljp.com/Windows10/doc/ProcessName-in-TaskManager/html/WindowsSessionManager.html
