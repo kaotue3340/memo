@@ -3,17 +3,17 @@ flowchart TD
   A1["電源ボタンON"]-->B1
 　subgraph UEFIフェーズ
   B1["UEFI起動"]-->
-  B2{"ハードウェアが\n正常かどうか"} -->|Yes| C1[OK]
-  B2 -->|No| B3[ビープ音を鳴らす] --> B3
+  B3{"POST(Power On Self Test)実行\nハードウェアが\n正常かどうか"} -->|Yes| C1[OK]
+  B3 -->|No| B9[ビープ音を鳴らす] --> B9
   end
   subgraph ブートマネージャーフェーズ
-  C1["ブートマネージャーを検索\n起動優先順に物理ドライブを参照\n※一般的にはUSBメモリ→DVDドライブ→HDDorSSDの順"]-->
-  C2["ブートマネージャー起動"]-->
+  C1["ブートマネージャー(bootmgfw.efi)を検索\n起動優先順に物理ドライブを参照\n※一般的にはUSBメモリ→DVDドライブ→HDDorSSDの順"]-->
+  C2["ブートマネージャー(bootmgfw.efi)起動"]-->
   C3["BCDファイルを参照\nブートローダーの場所を特定"]-->C4
   C4["ブートマネージャー起動"]-->D1
   end
   subgraph カーネルフェーズ
-  D1["ブートローダー起動"]-->
+  D1["ブートローダー(winload.efi)起動"]-->
   D2["カーネル起動"]--> 
   D3["サブシステムWindows起動"]-->
   D4["セッションマネージャー起動"]
@@ -42,7 +42,7 @@ flowchart TD
 * UEFIで保存された情報は、メインメモリには保存されず、マザーボード上のUEFI専用のRAMに保存される（※ボタン電池で稼働している）
 * BIOSとの違い：OSやハードウェアの技術進歩についていけなくなり進化したのがUEFI
 
-## ブートマネージャー
+## ブートマネージャー (bootmgfw.efi)
 * UEFIから起動されるブートローダーを起動するためのプログラム
 
 ## BCDファイル (Boot Configuration Data ブート構成データ)
@@ -84,7 +84,7 @@ bootmenupolicy          Standard
 hypervisorlaunchtype    Auto
 ```
 
-## ブートローダー
+## ブートローダー (winload.efi)
 * ブートマネージャーから起動されるカーネルを起動するためのプログラム
 
 ## カーネル
