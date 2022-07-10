@@ -4,7 +4,7 @@ flowchart TD
 　subgraph UEFIフェーズ
   B1["UEFI起動"]-->
   B2{"ハードウェアが\n正常かどうか"} -->|Yes| C1[OK]
-  B2 -->|No| E[ビープ音を鳴らす] --> B2
+  B2 -->|No| B3[ビープ音を鳴らす] --> B3
   end
   subgraph ブートマネージャーフェーズ
   C1["ブートマネージャーを検索\n起動優先順に物理ドライブを参照\n※一般的にはUSBメモリ→DVDドライブ→HDDorSSDの順"]-->
