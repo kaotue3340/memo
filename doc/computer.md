@@ -44,6 +44,9 @@ flowchart TD
 ## ブートマネージャー (bootmgfw.efi)
 * UEFIから起動されるブートローダーを起動するためのプログラム
 
+## ブートローダー (winload.efi)
+* ブートマネージャーから起動されるカーネルを起動するためのプログラム
+
 ## BCDファイル (Boot Configuration Data ブート構成データ)
 * ブートローダーを起動するために記載されている設定情報
 * 例
@@ -82,9 +85,6 @@ nx                      OptIn
 bootmenupolicy          Standard
 hypervisorlaunchtype    Auto
 ```
-
-## ブートローダー (winload.efi)
-* ブートマネージャーから起動されるカーネルを起動するためのプログラム
 
 ## カーネル
 * OSのコア部分のプログラム
