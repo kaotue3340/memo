@@ -7,14 +7,14 @@ flowchart TD
   B3 -->|No| B9[ビープ音を鳴らす] --> B9
   end
   subgraph ブートマネージャーフェーズ
-  C1["ブートマネージャー(bootmgfw.efi)を検索\n起動優先順に物理ドライブを参照\n※一般的にはUSBメモリ→DVDドライブ→HDDorSSDの順"]-->
+  C1["ブートマネージャー(bootmgfw.efi)を検索\n起動優先順にブートマネージャーが保存されている物理ドライブを特定\n※一般的にはUSBメモリ→DVDドライブ→HDDorSSDの順"]-->
   C2["ブートマネージャー(bootmgfw.efi)起動"]-->
   C3["BCDファイルを参照\nブートローダーが保存されている論理ドライブを特定"]-->D1
   end
   subgraph カーネルフェーズ
   D1["ブートローダー(winload.efi)起動"]-->
   D2["カーネル起動"]--> 
-  D3["サブシステムWindows起動"]-->
+  D3["Windowsサブシステム起動"]-->
   D4["セッションマネージャー(smss.exe)起動"]
   D4-->DD1
   D4-->DD2
@@ -23,7 +23,7 @@ flowchart TD
       DD1["セッション作成"]
       DD1-->DD1-1
       DD1-->DD1-2
-      DD1-1["デバイス起動"]
+      DD1-1["デバイスドライバ起動"]
       DD1-2["Windowsサービス起動"]
     end
     subgraph セッション1
