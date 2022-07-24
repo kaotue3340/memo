@@ -13,10 +13,10 @@ flowchart TD
 　subgraph ブラウザ
   A1["検索ボタンクリック"]-->
   A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーマ部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->B1
-  B1{"キャッシュに\nドメイン部の「twitter.com」の\nIPアドレスがあるか"} --> |Yes| B2[OK]
+  B1{"キャッシュに\nドメイン部のtwitter.comの\nIPアドレスがあるか"} --> |Yes| B2[OK]
   B1 --> |No| B9
   B2["通信先ポート番号を割り当てる"] -->
-  B3{"URLにポート番号が\n指定されているか"} --> |Yes| B4
+  B3{"ポート部にポート番号が\n指定されているか"} --> |Yes| B4
   B3 --> |No| B99["ブラウザがservicesファイルから\nポート番号を割り出し\nHTTP->80\nHTTPS->443"] --> B4
   B4["【URLの解析結果】\n\nhttps://twitter.com/kaotue1\n↓\nhttps://133.106.196.78:443"]-->C1
   end
@@ -29,8 +29,8 @@ flowchart TD
   end
   subgraph "プロトコル・スタック"
   C1["HTTPリクエスト送信"]-->
-  C2["twitterへリクエスト"]-->
-  C3[("【twitterサーバ】\nレスポンスを返却")]-->D0
+  C2["twitter.comへリクエスト"]-->
+  C3[("【twitter.comサーバ】\nレスポンスを返却")]-->D0
   end
   subgraph "ブラウザ"
   D0["ブラウザへレスポンス返却"]-->
