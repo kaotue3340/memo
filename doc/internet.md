@@ -34,9 +34,8 @@ flowchart TD
   end
   subgraph "ブラウザ"
   D0["ブラウザへレスポンス返却"]-->
-  D1["画面描画開始"]-->
-  D2["Loading\nHTML・CSS"]-->
-  D3["Scripting\nJavascript"]-->
+  D2["Loading\nHTML・CSSなどを読み込み"]-->
+  D3["Scripting\nJavascriptを実行"]-->
   D4["Rendering"]-->
   D5["Painting"]
   end
