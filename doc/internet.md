@@ -18,7 +18,7 @@ flowchart TD
   B2["ポート番号を割り当てる"] -->
   B3{"URLにポート番号が\n指定されているか"} --> |Yes| B4
   B3 --> |No| B99["ブラウザが自動付与\nHTTP->80\nHTTPS->443"] --> B4
-  B4["【URLの解析結果】https://twitter.com/kaotue1\n↓https://:443"]
+  B4["【URLの解析結果】\n\nhttps://twitter.com/kaotue1\n↓\nhttps://:443"]
   end
 ```
 
