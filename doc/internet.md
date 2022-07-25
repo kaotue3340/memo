@@ -19,7 +19,7 @@
 flowchart TD
 　subgraph ブラウザ
   A1["検索ボタンクリック"]-->
-  A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーマ部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->B1
+  A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーム部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->B1
   B1{"ブラウザのDNSキャッシュに\nドメイン部twitter.comの\nIPアドレスがあるか"} --> |Yes| B2
   B1 --> |No| B9
   B2["IPアドレスの取得完了"] -->
