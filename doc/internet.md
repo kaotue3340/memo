@@ -58,13 +58,25 @@ DNSの名前解決を実行するプログラム
 OSに組み込まれているネットワーク制御用のプログラム
 
 ## servicesファイル
-スキーマ→第４層のプロトコル、ポート番号の対応表が載っているファイル
+スキーマ→第４層のプロトコル、ポート番号の対応表が載っているファイル<br>
 ポート番号を指定していない場合、ブラウザからはポート番号のみ取得
 ### Windows
 C:\Windows\System32\drivers\etc\services
+```console
+# Copyright (c) 1993-2004 Microsoft Corp.
+#
+# This file contains port numbers for well-known services defined by IANA
+#
+# Format:
+#
+# <service name>  <port number>/<protocol>  [aliases...]   [#<comment>]
+#
+http               80/tcp    www www-http           #World Wide Web
+https             443/tcp    MCom                   #HTTP over TLS/SSL
+https             443/udp    MCom                   #HTTP over TLS/SSL
+```
 ### Mac
 /etc/services
-<br>例
 ```console
 /etc % cat services 
 #
