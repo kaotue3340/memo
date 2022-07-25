@@ -59,6 +59,8 @@ flowchart TD
 ## DNS (Domain Name System)
 IPアドレスとドメインを関連して管理する仕組み
 
+![DNS](https://upload.wikimedia.org/wikipedia/commons/d/d2/DNS_schema.svg)
+
 ## 国際化ドメイン名
 ascii以外の、漢字、アラビア文字、キリル文字、ギリシア文字などを使用したドメイン名<br>
 ※例 日本語.jp
