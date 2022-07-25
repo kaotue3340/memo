@@ -37,14 +37,16 @@ flowchart TD
   R3[("【ルートドメインサーバ】\n\nトップレベルドメイン(com)サーバの\nIPアドレスを取得")]-->
   R4[("【トップレベルドメインサーバ(com)】\n\ntwitter.comのIPアドレスを取得")]-->B2
   end
-  subgraph "HTTPサーバ"
-  C1["HTTPリクエスト送信"]-->
-  C2["twitter.comへリクエスト"]-->
-  C3[("【twitter.comサーバ】\nレスポンスを返却")]-->D0
+  subgraph "HTTPSサーバ"
+  C1["HTTPSリクエスト送信"]-->
+  C2["証明書の検証"]-->
+  C3["twitter.comへリクエスト"]-->
+  C4[("【twitter.comサーバ】\nレスポンスを返却")]-->D0
   end
   subgraph "ブラウザ"
+  C1---D2
   D0["ブラウザへレスポンス返却"]-->
-  D2["Loading\nHTML・CSSなどを読み込み"]-->
+  D2["Loading\nHTMLの読み込み、他CSSなど別途リクエスト実行"]-->D3
   D3["Scripting\nJavascriptを実行"]-->
   D4["Rendering"]-->
   D5["Painting"]
@@ -58,17 +60,19 @@ flowchart TD
 IPアドレスとドメインを関連して管理する仕組み
 
 ## 国際化ドメイン名
-英数字以外の、漢字、アラビア文字、キリル文字、ギリシア文字などを使用したドメイン名<br>
+ascii以外の、漢字、アラビア文字、キリル文字、ギリシア文字などを使用したドメイン名<br>
 ※例 日本語.jp
 
-## 国際化ドメイン名のDNSについて
-Punycodeという、国際化ドメインのUnicode文字をDNSで使える文字を使ってエンコードする符号化方式を使用して<br>
-変換後にいつも通りのDNSの名前解決を実施する<br>
-ブラウザ側でのエンコード対応だけなので、国際化ドメイン名が対応時にDNSの仕様変更は一切行われなかった。<br>
+## Punycode
+国際化ドメインのutf-8で表現されている文字列をasciiに変換するためのルール
 <br>
 https://punycode.jp/<br>
 正規化後	:	日本語.jp<br>
 Punycode	:	xn--wgv71a119e.jp<br>
+
+## 国際化ドメイン名のDNSについて
+Punycodeでasciiへ変換後にいつも通りのDNSの名前解決を実施する<br>
+ブラウザ側でのエンコード対応だけなので、国際化ドメイン名が対応時にDNSの仕様変更は一切行われなかった。<br>
 
 ## Socketライブラリ
 OSに組み込まれているネットワーク機能をアプリケーション(ブラウザなど)から呼び出すためのプログラム群
