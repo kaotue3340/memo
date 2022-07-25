@@ -37,7 +37,7 @@ flowchart TD
   R3[("【ルートドメインサーバ】\n\nトップレベルドメイン(com)サーバの\nIPアドレスを取得")]-->
   R4[("【トップレベルドメインサーバ(com)】\n\ntwitter.comのIPアドレスを取得")]-->B2
   end
-  subgraph "プロトコル・スタック"
+  subgraph "HTTPサーバ"
   C1["HTTPリクエスト送信"]-->
   C2["twitter.comへリクエスト"]-->
   C3[("【twitter.comサーバ】\nレスポンスを返却")]-->D0
@@ -76,12 +76,6 @@ OSに組み込まれているネットワーク機能をアプリケーション
 ## DNSリゾルバ
 Socketライブラリの中の一プログラム
 DNSの名前解決を実行するプログラム
-
-## プロトコル・スタック
-OSに組み込まれているネットワーク制御用のプログラム
-
-![image](https://user-images.githubusercontent.com/56548030/180726026-f4f31544-0dbe-4e63-ae5b-66e566461e72.png)
-
 
 ## servicesファイル
 スキーマ→第４層のプロトコル、ポート番号の対応表が載っているファイル<br>
