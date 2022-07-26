@@ -59,6 +59,16 @@ flowchart TD
 ## DNS (Domain Name System)
 IPアドレスとドメインを関連して管理する仕組み
 
+### ルートサーバ
+トップレベルドメイン（TLD）の参照情報を保持、<br>
+具体的にそれぞれのTLDを受け持つDNSサーバの名前とIPアドレスの対応といった情報が記載されている。<br>
+DNSクライアントはその情報を元にして、次に問い合わせるべきDNSサーバを把握する。<br>
+
+ルートサーバの場所については、すべてのDNSサーバ内に静的ファイルとして置かれており<br>
+a.root-servers.net～m.root-servers.net<br>
+先頭の各アルファベットがa～mまでの13レコードが定義されている<br>
+mのサーバが日本に存在する<br>
+
 ![DNS](https://upload.wikimedia.org/wikipedia/commons/d/d2/DNS_schema.svg)
 
 ## 国際化ドメイン名
@@ -132,3 +142,4 @@ http             80/tcp     www www-http # World Wide Web HTTP
 https           443/udp     # http protocol over TLS/SSL
 https           443/tcp     # http protocol over TLS/SSL
 ```
+## プロトコルについて
