@@ -29,7 +29,7 @@ flowchart TD
   B2-2["通信先ポート番号を割り当てる"] -->
   B3{"ポート部にポート番号が\n指定されているか"} --> |Yes| B4
   B3 --> |No| B99["ブラウザがservicesファイルから\nポート番号を割り出し\nHTTP->80\nHTTPS->443"] --> B4
-  B4["【URLの解析結果】\n\nhttps://twitter.com/kaotue1\n↓\nhttps://133.106.196.78:443"]-->C1
+  B4["【URLの解析結果】\n\nhttps://twitter.com/kaotue1\n↓\nhttps://133.106.196.78:443/kaotue1"]-->C1
   end
   subgraph "DNSサーバー"
   R1 --> |No| R2
