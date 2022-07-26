@@ -142,4 +142,10 @@ http             80/tcp     www www-http # World Wide Web HTTP
 https           443/udp     # http protocol over TLS/SSL
 https           443/tcp     # http protocol over TLS/SSL
 ```
-## プロトコルについて
+
+
+## 参考文献
+* DNSルートサーバ<br>
+https://www.nic.ad.jp/ja/newsletter/No45/0800.html
+* ネットワークはなぜつながるのか 第2版 知っておきたいTCP/IP、LAN、光ファイバの基礎知識<br>
+https://www.amazon.co.jp/dp/4822283119
