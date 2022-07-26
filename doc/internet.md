@@ -5,7 +5,7 @@
 
 <br>
 
-1. ブラウザの検索ボタンクリック
+1. アドレスバーにURLを入力しEnter押下
 1. URLを解読
 1. キャッシュにIPアドレスがあるか確認
 1. DNSからIPアドレスを取得
@@ -18,7 +18,7 @@
 ```mermaid
 flowchart TD
 　subgraph ブラウザ
-  A1["検索ボタンクリック"]-->
+  A1["アドレスバーにURLを入力しEnter押下"]-->
   A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーム部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->B1
   B1{"ブラウザのDNSキャッシュに\nドメイン部twitter.comの\nIPアドレスがあるか"} --> |Yes| B2
   B1 --> |No| B9
