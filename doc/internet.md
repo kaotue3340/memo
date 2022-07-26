@@ -18,20 +18,19 @@
 ```mermaid
 flowchart TD
 　subgraph ブラウザ
-  A1["アドレスバーにURLを入力しEnter押下"]-->
-  A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーム部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->B1
-  B1{"ブラウザのDNSキャッシュに\nドメイン部twitter.comの\nIPアドレスがあるか"} --> |Yes| B2
-  B1 --> |No| B9
+  A1["アドレスバーにURLを入力しEnter押下"]-->A2
+  A2["URLを分割する\nhttps://twitter.com/kaotue1\n↓\nスキーム部：https\nドメイン部：twitter.com\nパス部：kaotue1\nパラメータ部：省略されている\nポート番号：省略されている"]-->R0
+  R0["DNS名前解決の開始"]-->
+  B1{"ブラウザの\nDNSキャッシュに\nドメイン部twitter.comの\nIPアドレスがあるか"} --> |Yes| B2
+  B1 --> |No| R1
+  R1{"OSのDNSキャッシュに\nIPアドレスがあるか"} --> |Yes| B2
   B2["IPアドレスの取得完了"] -->
   B2-2["通信先ポート番号を割り当てる"] -->
   B3{"ポート部にポート番号が\n指定されているか"} --> |Yes| B4
   B3 --> |No| B99["ブラウザがservicesファイルから\nポート番号を割り出し\nHTTP->80\nHTTPS->443"] --> B4
   B4["【URLの解析結果】\n\nhttps://twitter.com/kaotue1\n↓\nhttps://133.106.196.78:443"]-->C1
   end
-  subgraph "DNSリゾルバ"
-  B9[DNSサーバへ\n問い合わせ開始]-->
-  R0["DNS名前解決の開始"]-->
-  R1{"OSのDNSキャッシュに\nIPアドレスがあるか"} --> |Yes| B2
+  subgraph "DNSサーバー"
   R1 --> |No| R2
   R2[("【最寄りのDNSサーバ】\n\nルートドメインサーバの\nIPアドレスを取得")]-->
   R3[("【ルートドメインサーバ】\n\nトップレベルドメイン(com)サーバの\nIPアドレスを取得")]-->
