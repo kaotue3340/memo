@@ -11,9 +11,17 @@
 アンマネージコード：CLRが担当している、OSへの命令を直接記載したプログラム<br>
 
 * CLR対応のコンパイラ一覧<br>
-・Microsoft<br>
-　　C++、C#、VisualBasic、F#、IronPython、IronRuby、ILアセンブラ<br>
-・他社<br>
+  * Microsoft開発<br>
+    * C++、C#、VisualBasic、F#、ILアセンブラ<br>
+    * IronPython<br>
+      .NET Framework上で動作するPythonの実装。2006年9月5日に初版がリリースされた。<br>
+      長らくPythonの２系（※サポート終了）にしか対応していなかったが、
+      最近になって３系対応のバージョンがリリースされたが、これもPython自体はサポート終了している（※2022年8月時点で3.4.0-beta）<br>
+      https://ironpython.net/
+    * IronRuby<br>
+      .NET Framework上で動作する、マイクロソフトによるRubyの実装である。<br>
+      http://ironruby.net/
+  * 他社開発<br>
 　　Ada、APL、Caml、COBOL、Eiffel、Forth、Fortran、Haskell、Lexico、LISP、LOGO、Lua、Mercury、ML、Mondrian、Oberon、Pascal、Perl、PHP、Prolog、RPG、Scheme、Smalltalk、Tcl/Tk<br>
 
 ## 参考文献
