@@ -19,7 +19,8 @@
       最近になって３系対応のバージョンがリリースされたが、これもPython自体はサポート終了している（※2022年8月時点で3.4.0-beta）<br>
       https://ironpython.net/
     * IronRuby<br>
-      .NET Framework上で動作する、マイクロソフトによるRubyの実装である。<br>
+      .NET Framework上で動作する、マイクロソフトによるRubyの実装。<br>
+      2011年3月13日バージョン1.1.3リリースを最後に更新なし<br>
       http://ironruby.net/
   * 他社開発<br>
 　　Ada、APL、Caml、COBOL、Eiffel、Forth、Fortran、Haskell、Lexico、LISP、LOGO、Lua、Mercury、ML、Mondrian、Oberon、Pascal、Perl、PHP、Prolog、RPG、Scheme、Smalltalk、Tcl/Tk<br>
