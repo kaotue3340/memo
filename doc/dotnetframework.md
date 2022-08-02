@@ -1,6 +1,30 @@
 # .NET Framework がコンパイルされて動くまで
 ## 概要
 
+## 今までの実行環境
+
+## .NET Framweorkの利点
+
+## .NET Frameworkの挙動
+
+### ソースコードのマネージモジュールへのコンパイル
+![image](https://user-images.githubusercontent.com/56548030/182281780-43b27989-e6ea-4616-972e-90e38be42502.png)
+
+* PE32/PE32+ヘッダ(Portable Executable)<br>
+  このプログラムが動作可能なマシンの種類などが記載。<br>
+  PE32かPE32+かは、ビルド時のターゲットによって変わる。<br>
+  * PE32 : AnyCPU<br>
+  * PE32+ : x64<br>
+![image](https://user-images.githubusercontent.com/56548030/182280961-7e5011d3-b040-4cd4-aa2c-1383110bbeff.png)
+* CLRヘッダ<br>
+必要となるCLRバージョン、マネージモジュールのエントリポイントメソッド（Mainメソッド）の情報などが記載。<br>
+* メタデータ<br>
+  コード内で定義された型とメンバーと、コードによって参照される型とメンバーの対応が記載。
+* ILコード<br>
+  コンパイラが生成したコード。実行時にCLRはILをネイティブのCPU命令にコンパイルする。
+  
+### マネージモジュールの結合によるアセンブリの生成
+
 ## 用語
 * CLR (Common Language Runtime)<br>
 マネージドコードの取得と機械語へのコンパイルと実行し<br>
