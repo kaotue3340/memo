@@ -8,7 +8,7 @@
 ## .NET Frameworkの挙動
 
 ### ソースコードのマネージモジュールへのコンパイル
-![image](https://user-images.githubusercontent.com/56548030/182281780-43b27989-e6ea-4616-972e-90e38be42502.png)
+![image](https://user-images.githubusercontent.com/56548030/182310217-fd6bc395-0095-4740-a3e3-9ef91fd608a9.png)
 
 * PE32/PE32+ヘッダ(Portable Executable)<br>
   このプログラムが動作可能なマシンの種類などが記載。<br>
