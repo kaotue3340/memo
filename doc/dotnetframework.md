@@ -25,7 +25,7 @@
   コンパイラが生成したコード。実行時にCLRはILをネイティブのCPU命令にコンパイルする。<br>
   
 ### マネージモジュールの結合によるアセンブリの生成
-![image](https://user-images.githubusercontent.com/56548030/182314413-ae9a4ac5-d307-493c-8e90-2b57ab88945a.png)
+![image](https://user-images.githubusercontent.com/73086030/182321173-668034ca-eaef-4e97-ad0a-fe346557cdce.png)
 
 ## 用語
 * CLR (Common Language Runtime)<br>
